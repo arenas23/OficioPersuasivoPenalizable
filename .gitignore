@@ -1,0 +1,33 @@
+# Archivos de configuración de Visual Studio
+.vs/
+*.user
+*.userosscache
+*.suo
+*.userprefs
+
+# Archivos binarios y de compilación
+bin/
+obj/
+*.dll
+*.exe
+*.pdb
+*.cache
+
+# Archivos generados por el sistema de construcción
+*.log
+*.vspscc
+*.vssscc
+
+# Archivos de dependencias y herramientas de construcción
+.nuget/
+packages/
+
+# Archivos temporales
+*.tmp
+*.temp
+*.swp
+*.swo
+
+# Archivos de configuración del sistema operativo
+.DS_Store
+Thumbs.db
