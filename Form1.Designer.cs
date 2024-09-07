@@ -28,12 +28,49 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "Form1";
+            btnBuscar = new Button();
+            rchTxtBxInfo = new RichTextBox();
+            openFileDialog1 = new OpenFileDialog();
+            SuspendLayout();
+            // 
+            // btnBuscar
+            // 
+            btnBuscar.Location = new Point(49, 8);
+            btnBuscar.Name = "btnBuscar";
+            btnBuscar.Size = new Size(94, 29);
+            btnBuscar.TabIndex = 0;
+            btnBuscar.Text = "Buscar";
+            btnBuscar.UseVisualStyleBackColor = true;
+            btnBuscar.Click += btnBuscar_Click;
+            // 
+            // rchTxtBxInfo
+            // 
+            rchTxtBxInfo.Location = new Point(49, 43);
+            rchTxtBxInfo.Name = "rchTxtBxInfo";
+            rchTxtBxInfo.Size = new Size(704, 376);
+            rchTxtBxInfo.TabIndex = 1;
+            rchTxtBxInfo.Text = "";
+            // 
+            // openFileDialog1
+            // 
+            openFileDialog1.FileName = "openFileDialog1";
+            // 
+            // Form1
+            // 
+            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(800, 450);
+            Controls.Add(rchTxtBxInfo);
+            Controls.Add(btnBuscar);
+            Name = "Form1";
+            Text = "Form1";
+            ResumeLayout(false);
         }
 
         #endregion
+
+        private Button btnBuscar;
+        private RichTextBox rchTxtBxInfo;
+        private OpenFileDialog openFileDialog1;
     }
 }
