@@ -35,9 +35,10 @@
             // 
             // btnBuscar
             // 
-            btnBuscar.Location = new Point(49, 8);
+            btnBuscar.Location = new Point(43, 6);
+            btnBuscar.Margin = new Padding(3, 2, 3, 2);
             btnBuscar.Name = "btnBuscar";
-            btnBuscar.Size = new Size(94, 29);
+            btnBuscar.Size = new Size(82, 22);
             btnBuscar.TabIndex = 0;
             btnBuscar.Text = "Buscar";
             btnBuscar.UseVisualStyleBackColor = true;
@@ -45,9 +46,10 @@
             // 
             // rchTxtBxInfo
             // 
-            rchTxtBxInfo.Location = new Point(49, 43);
+            rchTxtBxInfo.Location = new Point(43, 32);
+            rchTxtBxInfo.Margin = new Padding(3, 2, 3, 2);
             rchTxtBxInfo.Name = "rchTxtBxInfo";
-            rchTxtBxInfo.Size = new Size(704, 376);
+            rchTxtBxInfo.Size = new Size(616, 283);
             rchTxtBxInfo.TabIndex = 1;
             rchTxtBxInfo.Text = "";
             // 
@@ -57,13 +59,15 @@
             // 
             // Form1
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(700, 338);
             Controls.Add(rchTxtBxInfo);
             Controls.Add(btnBuscar);
+            Margin = new Padding(3, 2, 3, 2);
             Name = "Form1";
             Text = "Form1";
+            Load += Form1_Load;
             ResumeLayout(false);
         }
 
