@@ -37,11 +37,15 @@ namespace OficioPersuasivoPenalizable
         private void ExtractInfo(string pdfPath)
         {
             List<string> textLines = [];
+            string[] recordAndProcess;
 
             textLines = pdfReader.ReadPdf(pdfPath);
             report.declaracion = pdfReader.GetDeclaracionList(textLines);
             report.contribuyente = pdfReader.GetContribuyenteData(textLines);
             report.total = pdfReader.GetTotalDeclaracion(textLines);
+            recordAndProcess = pdfReader.GetRecordAndProcess(textLines);
+            report.expediente = recordAndProcess[0];
+            report.proceso = recordAndProcess[1];
         }
 
     }

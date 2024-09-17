@@ -103,5 +103,12 @@ namespace OficioPersuasivoPenalizable.Services
             total = lines[lastIndex];
             return total;
         }
+
+        public string[] GetRecordAndProcess(List<string> lines)
+        {
+            int index = lines.IndexOf(StringIndexConstants.RECORD_STRING) + 1;
+            string[] recordProcess = lines[index].Split(' ');
+            return recordProcess;
+        }
     }
 }
