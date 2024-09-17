@@ -41,6 +41,7 @@ namespace OficioPersuasivoPenalizable
             textLines = pdfReader.ReadPdf(pdfPath);
             report.declaracion = pdfReader.GetDeclaracionList(textLines);
             report.contribuyente = pdfReader.GetContribuyenteData(textLines);
+            report.total = pdfReader.GetTotalDeclaracion(textLines);
         }
 
     }

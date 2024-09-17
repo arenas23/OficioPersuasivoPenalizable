@@ -12,5 +12,6 @@ namespace OficioPersuasivoPenalizable.Entities
         public string proceso;
         public Contribuyente contribuyente;
         public List<Declaracion> declaracion;
+        public string total;
     }
 }

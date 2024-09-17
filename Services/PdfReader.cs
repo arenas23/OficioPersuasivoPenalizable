@@ -95,5 +95,13 @@ namespace OficioPersuasivoPenalizable.Services
             return contribuyente;
             
         }
+
+        public string GetTotalDeclaracion(List<string> lines) 
+        {
+            string total;
+            int lastIndex = lines.IndexOf(StringIndexConstants.LAST_DECLARATION_STRING) - 1;
+            total = lines[lastIndex];
+            return total;
+        }
     }
 }

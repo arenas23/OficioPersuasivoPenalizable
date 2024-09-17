@@ -17,7 +17,6 @@
         public string? periodo;
         public string? impuesto;
         public string? sancion;
-        public string? total;
 
     }
 }
