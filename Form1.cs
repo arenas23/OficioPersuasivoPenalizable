@@ -10,11 +10,13 @@ namespace OficioPersuasivoPenalizable
     {
         PdfReader pdfReader;
         PdfReport report;
+        PdfCreator pdfCreator;
         public Form1()
         {
             InitializeComponent();
             pdfReader = new();
             report = new();
+            pdfCreator = new();
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -22,16 +24,29 @@ namespace OficioPersuasivoPenalizable
             openFileDialog1.Filter = "Archivos PDF (*.pdf)|*.pdf";
             openFileDialog1.FilterIndex = 1;
             openFileDialog1.RestoreDirectory = true;
+            
         }
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            string pdfPath;
-
-            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            QuestPDF.Settings.License = QuestPDF.Infrastructure.LicenseType.Community;
+              
+            try
             {
-                pdfPath = openFileDialog1.FileName;
-                ExtractInfo(pdfPath);
+                pdfCreator.CreateDocument();
             }
+            catch (Exception)
+            {
+
+                throw;
+            }
+         
+            //string pdfPath;
+
+            //if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            //{
+            //    pdfPath = openFileDialog1.FileName;
+            //    ExtractInfo(pdfPath);
+            //}
         }
 
         private void ExtractInfo(string pdfPath)
