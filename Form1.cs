@@ -1,5 +1,7 @@
 using OficioPersuasivoPenalizable.Entities;
 using OficioPersuasivoPenalizable.Services;
+using QuestPDF.Fluent;
+using QuestPDF.Previewer;
 using System.Collections;
 using UglyToad.PdfPig;
 using UglyToad.PdfPig.DocumentLayoutAnalysis.PageSegmenter;
@@ -10,13 +12,12 @@ namespace OficioPersuasivoPenalizable
     {
         PdfReader pdfReader;
         PdfReport report;
-        PdfCreator pdfCreator;
+        InformeObligaciones pdfCreator;
         public Form1()
         {
             InitializeComponent();
             pdfReader = new();
             report = new();
-            pdfCreator = new();
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -29,24 +30,29 @@ namespace OficioPersuasivoPenalizable
         private void btnBuscar_Click(object sender, EventArgs e)
         {
             QuestPDF.Settings.License = QuestPDF.Infrastructure.LicenseType.Community;
-              
+
+
+
+            string pdfPath;
+
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                pdfPath = openFileDialog1.FileName;
+                ExtractInfo(pdfPath);
+            }
+
+            pdfCreator = new(report);
+
             try
             {
-                pdfCreator.CreateDocument();
+
+                pdfCreator.ShowInPreviewerAsync();
             }
             catch (Exception)
             {
 
                 throw;
             }
-         
-            //string pdfPath;
-
-            //if (openFileDialog1.ShowDialog() == DialogResult.OK)
-            //{
-            //    pdfPath = openFileDialog1.FileName;
-            //    ExtractInfo(pdfPath);
-            //}
         }
 
         private void ExtractInfo(string pdfPath)
